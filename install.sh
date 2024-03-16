@@ -2,7 +2,7 @@
 # get username that called script
 echo $SUDO_USER
 ME=$SUDO_USER
-script_path="./install-aws-cli.sh"
+script_path="/home/ubuntu/dotfiles/install-aws-cli.sh"
 
 # check if effective user id is 0 (root)
 
