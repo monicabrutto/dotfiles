@@ -6,7 +6,7 @@ read -rp "[PROMPT] Do you want to install aws cli? (y/n):" choice
 
 choice=$(echo -e "$choice" | tr '[:upper:]' '[:lower:]')
 
-if [[ "$choice" == "y" | "$choice" == "yes" ]]; then 
+if [[ "$choice" == "y" || "$choice" == "yes" ]]; then 
 
 	if [[ -n $(which unzip) ]]; then 
 		sudo apt -y /
