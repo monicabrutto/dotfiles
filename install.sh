@@ -2,6 +2,7 @@
 # get username that called script
 echo $SUDO_USER
 ME=$SUDO_USER
+script_path="./install-aws-cli.sh"
 
 # check if effective user id is 0 (root)
 
@@ -36,6 +37,19 @@ if [[ "$(id -u)" -eq 0 ]]; then
 			bash Anaconda3-2024.02-1-Linux-x86_64.sh -b -p /home/$ME/anaconda3
 			echo "PATH=$PATH:/home/kduncan/anaconda3/bin" >> /home/$ME/.profile
 		fi
+		#call the script install-aws-cli.sh
+
+		# Check if the file exists and is executable
+		if [ -x "$script_path" ]; then
+    		# File exists and is executable, so we can run it
+    			"$script_path" 
+		else
+    		# File does not exist or is not executable
+    			echo "Error: Script '$script_path' does not exist or is not executable."
+    		# Handle the error accordingly
+		fi
+  
+  		./install-aws-cli.sh 
 	else
 		echo "apt is not installed at the specified location."
 	fi
