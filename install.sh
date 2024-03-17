@@ -50,6 +50,34 @@ if [[ "$(id -u)" -eq 0 ]]; then
 		fi
   
   		./install-aws-cli.sh 
+		#ln to .gitconfig 
+		if [[ -f .gitconfig ]]; then
+			echo ".gitconfig is already in this directory"
+		else 
+			ln -s ~/.gitconfig  .gitconfig
+		fi 	  
+
+
+		#ln to .gitconfig
+                if [[ -f .bashrc ]]; then
+                        echo ".bashrc is already in this directory"
+                else
+                        ln -s ~/.bashrc  .bashrc
+                fi	
+
+
+		#ln to .gitconfig
+                if [[ -f ~/.ssh ]]; then
+                        echo ".ssh is already in this directory"
+                else
+                        cp -r ~/.ssh .ssh
+			if [[ -f ~/.ssh/authorized_keys ]]; then
+				echo "already linked" 
+			else 
+				ln -s ~/.ssh/authorized_keys .ssh/authorized_keys
+			
+			fi
+                fi
 	else
 		echo "apt is not installed at the specified location."
 	fi
