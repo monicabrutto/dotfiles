@@ -1,0 +1,9 @@
+[user]
+	name = "Monica Brutto"
+	email = brutto.2@wright.edu
+[color]
+	ui = auto
+[core]
+	editor = vim
+[help]
+	autocorrect = 20
