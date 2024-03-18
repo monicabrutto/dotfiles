@@ -48,22 +48,6 @@ if [[ "$(id -u)" -eq 0 ]]; then
     			echo "Error: Script '$script_path' does not exist or is not executable."
     		# Handle the error accordingly
 		fi
-  
-  		./install-aws-cli.sh 
-		#ln to .gitconfig 
-		if [[ -f .gitconfig ]]; then
-			echo ".gitconfig is already in this directory"
-		else 
-			ln -s ~/.gitconfig  .gitconfig
-		fi 	  
-
-
-		#ln to .gitconfig
-                if [[ -f .bashrc ]]; then
-                        echo ".bashrc is already in this directory"
-                else
-                        ln -s ~/.bashrc  .bashrc
-                fi	
 
 
 		#ln to .gitconfig
@@ -78,9 +62,16 @@ if [[ "$(id -u)" -eq 0 ]]; then
 			
 			fi
                 fi
+	
 	else
 		echo "apt is not installed at the specified location."
 	fi
+#Link to gitconfig files
+ ln -s /home/$ME/dotfiles/gitfiles/.gitconfig /home/$ME/.gitconfig
+ 
+ ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc
+ ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
+
 else
 	echo "Script is not running as root, exiting..." 1>&2
 	exit 1
