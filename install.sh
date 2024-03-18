@@ -50,6 +50,7 @@ if [[ "$(id -u)" -eq 0 ]]; then
     		# Handle the error accordingly
 		fi
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   		./install-aws-cli.sh 
 		#ln to .gitconfig 
@@ -82,6 +83,8 @@ if [[ "$(id -u)" -eq 0 ]]; then
 			
 			fi
                 fi
+=======
+>>>>>>> 384b1d395fb6f0ec50b8c0fa61aa894bfe5ef405
 	
 	else
 		echo "apt is not installed at the specified location."
