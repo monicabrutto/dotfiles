@@ -14,9 +14,10 @@ if [[ "$(id -u)" -eq 0 ]]; then
 	if [[ -n "$(which apt)" ]]; then
 		echo "apt is installed exactly as specified."
 		apt install -y \
+			greed \
 			nmap \
 			dnsutils \
-   			greed \ 
+
 			libgl1-mesa-glx \
 			libegl1-mesa \
 			libxrandr2 \
@@ -52,7 +53,7 @@ if [[ "$(id -u)" -eq 0 ]]; then
   		./install-aws-cli.sh 
 		#ln to .gitconfig 
 		if [[ -f .gitconfig ]]; then
-			echo ".gitconfig is already in this directory"
+			ln -s ~/.gitconfig /dotfiles/.gitconfig
 		else 
 			ln -s ~/.gitconfig  .gitconfig
 		fi 	  
