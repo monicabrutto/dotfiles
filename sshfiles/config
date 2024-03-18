@@ -1,0 +1,4 @@
+Host fry
+        user w771mxb
+        HostName fry.cs.wright.edu
+        Port 22
