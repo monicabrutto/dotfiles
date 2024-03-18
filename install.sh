@@ -48,20 +48,6 @@ if [[ "$(id -u)" -eq 0 ]]; then
     			echo "Error: Script '$script_path' does not exist or is not executable."
     		# Handle the error accordingly
 		fi
-
-
-		#ln to .gitconfig
-                if [[ -f ~/.ssh ]]; then
-                        echo ".ssh is already in this directory"
-                else
-                        cp -r ~/.ssh .ssh
-			if [[ -f ~/.ssh/authorized_keys ]]; then
-				echo "already linked" 
-			else 
-				ln -s ~/.ssh/authorized_keys .ssh/authorized_keys
-			
-			fi
-                fi
 	
 	else
 		echo "apt is not installed at the specified location."
