@@ -1,5 +1,6 @@
 #!/bin/bash
 # get username that called script
+# from Kayleigh Duncan
 echo $SUDO_USER
 ME=$SUDO_USER
 script_path="/home/ubuntu/dotfiles/install-aws-cli.sh"
@@ -39,7 +40,7 @@ if [[ "$(id -u)" -eq 0 ]]; then
 			echo "PATH=$PATH:/home/kduncan/anaconda3/bin" >> /home/$ME/.profile
 		fi
 		#call the script install-aws-cli.sh
-
+	#From chat gpt
 		# Check if the file exists and is executable
 		if [ -x "$script_path" ]; then
     		# File exists and is executable, so we can run it
@@ -54,10 +55,25 @@ if [[ "$(id -u)" -eq 0 ]]; then
 		echo "apt is not installed at the specified location."
 	fi
 #Link to gitconfig files
- ln -s /home/$ME/dotfiles/gitfiles/.gitconfig /home/$ME/.gitconfig
+# ln command from Kayleigh Duncan
+# part of if statement from Chat gpt
+	if [[ -e /home/$ME/.gitconfig ]]; then
+		rm /home/$ME/.gitconfig
+
+	fi
+		ln -s /home/$ME/dotfiles/.gitconfig /home/$ME/.gitconfig
+ 	if [[ -e /home/$ME/.bashrc ]]; then
+                rm /home/$ME/.bashrc
+
+        fi
+	 ln -s /home/$ME/dotfiles/.bashrc /home/$ME/.bashrc
+
+	if [[ -e /home/$ME/.ssh/config ]]; then
+                rm /home/$ME/.ssh/config
+
+        fi
  
- ln -s /home/$ME/dotfiles/bashrc /home/$ME/.bashrc
- ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
+ 	ln -s /home/$ME/dotfiles/sshfiles/config /home/$ME/.ssh/config
 
 else
 	echo "Script is not running as root, exiting..." 1>&2
