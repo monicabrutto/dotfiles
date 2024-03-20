@@ -17,7 +17,7 @@ else
 
 	echo "Vundle has been successfully installed"
 	echo "Removed Vundle default vimrc"
-	ln -s ~/dotfiles/vimrc /home/$ME/.vimrc
+	ln -s home/$ME/dotfiles/vimrc /home/$ME/.vimrc
 	echo "Replaced with repo vimrc"
 	
 
