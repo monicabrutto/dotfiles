@@ -1,6 +1,9 @@
 # dotfiles
 user dotfiles. Created in CEG2410
 
+### Installs 
+
+
 ### Sources 
 * [Vim plug in resource](https://vimawesome.com/plugin/fugitive-vim)
 * [Chat gpt](https://chat.openai.com/)
