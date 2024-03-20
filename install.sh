@@ -59,10 +59,11 @@ if [[ "$(id -u)" -eq 0 ]]; then
 # part of if statement from Chat gpt
 	if [[ -e /home/$ME/.gitconfig ]]; then
 		rm /home/$ME/.gitconfig
-
 	fi
-		ln -s /home/$ME/dotfiles/.gitconfig /home/$ME/.gitconfig
- 	if [[ -e /home/$ME/.bashrc ]]; then
+	
+ 	ln -s /home/$ME/dotfiles/.gitconfig /home/$ME/.gitconfig
+ 	
+  	if [[ -e /home/$ME/.bashrc ]]; then
                 rm /home/$ME/.bashrc
 
         fi
