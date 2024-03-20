@@ -8,7 +8,7 @@ else
 	mkdir -p /home/$ME/.vim/bundle
 
 	# Clone Vundle repository
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git home/dotfiles/.vim/bundle/Vundle.vim
 
 	# Create a backup of existing .vimrc file
 	if [ -f /home/$ME/.vimrc ]; then
