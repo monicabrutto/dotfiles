@@ -4,7 +4,7 @@
 echo $SUDO_USER
 ME=$SUDO_USER
 script_path_one="/home/ubuntu/dotfiles/install-aws-cli.sh"
-script_path_two="/home/ubuntu/dotfiles/install-vundlue.sh"
+script_path_two="/home/ubuntu/dotfiles/install-vundle.sh"
 
 # check if effective user id is 0 (root)
 
