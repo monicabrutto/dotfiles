@@ -3,7 +3,8 @@
 # from Kayleigh Duncan
 echo $SUDO_USER
 ME=$SUDO_USER
-script_path="/home/ubuntu/dotfiles/install-aws-cli.sh"
+script_path_one="/home/ubuntu/dotfiles/install-aws-cli.sh"
+script_path_two="/home/ubuntu/dotfiles/install-vundlue.sh"
 
 # check if effective user id is 0 (root)
 
@@ -42,12 +43,22 @@ if [[ "$(id -u)" -eq 0 ]]; then
 		#call the script install-aws-cli.sh
 	#From chat gpt
 		# Check if the file exists and is executable
-		if [ -x "$script_path" ]; then
+		if [ -x "$script_path_one" ]; then
     		# File exists and is executable, so we can run it
-    			"$script_path" 
+    			"$script_path_one" 
 		else
     		# File does not exist or is not executable
-    			echo "Error: Script '$script_path' does not exist or is not executable."
+    			echo "Error: Script '$script_path_one' does not exist or is not executable."
+    		# Handle the error accordingly
+		fi
+
+  		# Check if the file exists and is executable
+		if [ -x "$script_path_two" ]; then
+    		# File exists and is executable, so we can run it
+    			"$script_path_two" 
+		else
+    		# File does not exist or is not executable
+    			echo "Error: Script '$script_path_two' does not exist or is not executable."
     		# Handle the error accordingly
 		fi
 	
